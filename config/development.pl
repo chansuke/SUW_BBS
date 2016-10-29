@@ -4,9 +4,10 @@ my $basedir = File::Spec->rel2abs(File::Spec->catdir(dirname(__FILE__), '..'));
 my $dbpath = File::Spec->catfile($basedir, 'db', 'development.db');
 +{
     'DBI' => [
-        "dbi:SQLite:dbname=$dbpath", '', '',
+        "dbi:mysql:host=localhost;port=3306;database=suwbbs",
+        'root','test',
         +{
-            sqlite_unicode => 1,
+            mysql_enable_utf8 => 1,
         }
     ],
 };
